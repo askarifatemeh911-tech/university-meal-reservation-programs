@@ -1,1 +1,1 @@
-# university-meal-reservation-programs
+# UniversityMealReservationPrograms
