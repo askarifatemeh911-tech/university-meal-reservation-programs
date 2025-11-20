@@ -7,21 +7,25 @@
 تحلیل نیازمندی‌ها
 نیازمندی‌های عملکردی و غیرعملکردی سیستم
 requirements.md
+
 2:
 
 موارد کاربرد (Use Cases)
 سناریوها و جریان‌های اصلی کاربران
 use_cases.md
+
 3:
 
 معماری و طراحی سیستم
 ساختار سیستم، اجزا، نمودارها و معماری سه‌لایه
 architecture.md
+
 4:
 
 تحلیل اصول اولیه (First Principles)
 تحلیل بنیادی مسئله، راه‌حل و منطق پروژه
 first_principles_analysis.md
+
 5:
 
 Use Case Diagram
