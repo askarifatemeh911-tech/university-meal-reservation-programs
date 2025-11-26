@@ -52,15 +52,18 @@ Django / Laravel / React :فریمورک پیشنھادی -
 Python /c++ / PHP :زبان برنامه نویسی -
 
 ## مستندات
-نیازمندی‌های کاربردی(docs/requirements.md)
+نیازمندی‌های کاربردی[Requirements](docs/requirements.md)
 
 
 
- معماری و اجزای سیستم(docs/use_cases.md) 
+
+ معماری و اجزای سیستم[Use Cases](docs/use_cases.md)
+ 
 
 
 
-سناریوی کاربر(docs/architecture.md)
+سناریوی کاربر[Architecture](docs/architecture.md)
+
 
 ## برنامه زمان بندی اولیه
 | مرحله | توضیحات | بازه زمانی |
