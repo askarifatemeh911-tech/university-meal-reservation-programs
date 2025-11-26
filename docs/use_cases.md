@@ -1,29 +1,33 @@
 ```mermaid
-flowchart TD
+flowchart LR
 
-  classDef page fill:#ffefd5,stroke:#e67e22,stroke-width:2px,color:#000,rx:12,ry:12;
-  classDef system fill:#eaf2ff,stroke:#2980b9,stroke-width:2px,color:#000,rx:12,ry:12;
+  %% ---------- Styles ----------
+  classDef page fill:#fff7e6,stroke:#e67e22,stroke-width:2px,color:#000,rx:12,ry:12;
+  classDef action fill:#e8f7ff,stroke:#3498db,stroke-width:2px,color:#000,rx:12,ry:12;
+  classDef system fill:#f0e9ff,stroke:#8e44ad,stroke-width:2px,color:#000,rx:12,ry:12;
 
-  Home["🏠 Home / صفحه‌ٔ اصلی"]:::page
-  Menu["📋 Menu / منو"]:::page
-  Item["🍽️ Food Item / صفحهٔ غذا"]:::page
-  Cart["🛒 Cart / سبد خرید"]:::page
-  Checkout["💳 Checkout / پرداخت"]:::page
-  OrderConfirm["✅ Order Confirm / تایید سفارش"]:::page
-  UserAcc["👤 User Account / حساب کاربری"]:::page
+  %% ---------- Pages ----------
+  Home["🏠 Home (صفحه اصلی)"]:::page
+  Menu["📋 Menu (منو)"]:::page
+  Food["🍽️ Food Item (جزئیات غذا)"]:::page
+  Cart["🛒 Cart (سبد خرید)"]:::page
+  Checkout["💳 Checkout (پرداخت)"]:::page
+  Confirm["✅ Order Confirm"]:::page
+  Account["👤 User Account"]:::page
 
+  %% ---------- System ----------
   Admin["🛠 Admin Dashboard"]:::system
   API["🔌 Backend API"]:::system
 
-  Home -->|browse| Menu
-  Menu -->|view item| Item
-  Item -->|add| Cart
+  %% ---------- Flow ----------
+  Home --> Menu
+  Menu --> Food
+  Food -->|Add| Cart
   Cart --> Checkout
-  Checkout --> OrderConfirm
-  UserAcc -->|view orders| OrderConfirm
-  Admin -->|manage menu| Menu
-  API -->|serves data| Menu
-  API -->|process| Checkout
+  Checkout --> Confirm
 
+  Account -->|View Orders| Confirm
+  Admin -->|Manage Menu| Menu
 
-
+  API -->|Get Foods| Menu
+  API -->|Send Order| Checkout
