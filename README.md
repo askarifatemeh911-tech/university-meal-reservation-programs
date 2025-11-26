@@ -43,7 +43,7 @@
   
 ## فناوری ها وابزارهای پیشنهادی
 
-MySQL / PostgreSQL / MongoDB :پایگاه داده -  
+MySQL / PostgreSQL / MongoDB :پایگاه داده -
 
 
 
