@@ -1,33 +1,35 @@
 ```mermaid
+%% Use Case Diagram for University Meal Reservation System
 flowchart LR
 
+  %% ---------- Actors ----------
+  student(["👨‍🎓 دانشجو"])
+  admin(["🛠 مدیر سیستم"])
+
+  %% ---------- Use Cases ----------
+  UC_ViewMenu(["📋 مشاهده منوی غذا"])
+  UC_ReserveMeal(["🍽️ رزرو غذا"])
+  UC_CancelReservation(["❌ لغو رزرو"])
+  UC_ViewHistory(["📅 مشاهده تاریخچه رزرو"])
+  UC_Login(["🔐 ورود به سیستم"])
+
+  UC_ManageMeals(["📦 مدیریت منوی غذا"])
+  UC_ManageUsers(["👥 مدیریت کاربران"])
+  UC_ViewReports(["📊 گزارش‌گیری"])
+
+  %% ---------- Student Relations ----------
+  student --> UC_Login
+  student --> UC_ViewMenu
+  student --> UC_ReserveMeal
+  student --> UC_CancelReservation
+  student --> UC_ViewHistory
+
+  %% ---------- Admin Relations ----------
+  admin --> UC_Login
+  admin --> UC_ManageMeals
+  admin --> UC_ManageUsers
+  admin --> UC_ViewReports
+
   %% ---------- Styles ----------
-  classDef page fill:#fff7e6,stroke:#e67e22,stroke-width:2px,color:#000,rx:12,ry:12;
-  classDef action fill:#e8f7ff,stroke:#3498db,stroke-width:2px,color:#000,rx:12,ry:12;
-  classDef system fill:#f0e9ff,stroke:#8e44ad,stroke-width:2px,color:#000,rx:12,ry:12;
+  classDef actor fill:#e8f7
 
-  %% ---------- Pages ----------
-  Home["🏠 Home (صفحه اصلی)"]:::page
-  Menu["📋 Menu (منو)"]:::page
-  Food["🍽️ Food Item (جزئیات غذا)"]:::page
-  Cart["🛒 Cart (سبد خرید)"]:::page
-  Checkout["💳 Checkout (پرداخت)"]:::page
-  Confirm["✅ Order Confirm"]:::page
-  Account["👤 User Account"]:::page
-
-  %% ---------- System ----------
-  Admin["🛠 Admin Dashboard"]:::system
-  API["🔌 Backend API"]:::system
-
-  %% ---------- Flow ----------
-  Home --> Menu
-  Menu --> Food
-  Food -->|Add| Cart
-  Cart --> Checkout
-  Checkout --> Confirm
-
-  Account -->|View Orders| Confirm
-  Admin -->|Manage Menu| Menu
-
-  API -->|Get Foods| Menu
-  API -->|Send Order| Checkout
