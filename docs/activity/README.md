@@ -1,15 +1,12 @@
-flowchart LR
-    Start((Start))
-    Login{User logged in?}
-    Register[Register User]
-    Dashboard[Go to Dashboard]
-    CreateRepo[Create Repository]
-    End((End))
+flowchart TD
+    A((Start))
+    B{Login?}
+    C[Register]
+    D[Dashboard]
+    E((End))
 
-    Start --> Login
-    Login -- No --> Register
-    Register --> Dashboard
-    Login -- Yes --> Dashboard
-    Dashboard --> CreateRepo
-    CreateRepo --> End
-
+    A --> B
+    B -- No --> C
+    C --> D
+    B -- Yes --> D
+    D --> E
